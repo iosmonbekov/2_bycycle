@@ -1,0 +1,580 @@
+ //Import of Font-Family {
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Making of Variables {
+$fontfamily:"Lato";
+$minwidth:320px;
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Import of Null-Style {
+@import "nullstyle.scss";
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//The Basic CSS for Start {
+body {}
+.wrapper{
+	overflow: hidden;
+	min-height: 100%;
+}
+.container{
+	max-width:1130px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+.ibg{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.ibg img{
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//STARTING CODING {}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+.main-screen {
+	flex: 1 0 100%;
+	background:  url('../images/Header__imagebig.jpg') center no-repeat;
+	background-size: cover;
+}
+.content {}
+////////////////////////////////////////////////////////////////////////////////////////
+.generation {
+	padding: 120px 0;
+	background-color: #f7f7f7;
+	&__block {}
+	@media (max-width:900px ) {
+		padding: 80px 0;
+	}
+	@media (max-width:600px ) {
+		padding: 60px 0;
+	}
+}
+.block {
+	text-align: center;
+	&__icon {
+		margin: 0 0 30px 0;
+	}
+	&__title {
+		color: #353738;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 24px;
+		text-transform: uppercase;
+		letter-spacing: 3.6px;
+		margin: 0 0 18px 0;
+	}
+	&__text {
+		color: #848789;
+		font-size: 18px;
+		line-height: 34px;
+		&_j {
+			text-align: justify;
+			font-size: 16px;
+			line-height: 30px;
+			&:after {
+				content: '';
+				display: block;
+				margin: 35px auto 0px auto;
+				width: 50px;
+				height: 1px;
+				background-color: #ebebeb;
+			}
+		}
+	}
+	@media (max-width: 1500px) {
+		&__text {
+			&_j {
+				&:after {
+					margin: 15px auto 0px auto;
+				}
+			}
+		}
+	}
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+.brands {
+	&_rev {
+		.brands__column {
+			order: 1;
+			&_b {
+				order: 2;
+			}
+		}
+	}
+	&_last {}
+	&__row {
+		display: flex;
+	}
+	&__column {
+		flex: 0 1 33.333%;
+		&_b {
+			flex: 0 1 66.667%;
+		}
+	}
+	&__item {}
+	&__content {
+		padding: 70px 65px 55px 65px;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin: 0 0 0 -10px;
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #fff;
+		}
+	}
+	&__image {
+		padding: 0 0 37.51% 0;
+	}
+	@media (max-width: 1500px) {
+		&__content {
+			padding: 40px 35px 30px 35px;
+		}
+	}
+	@media (max-width: 1100px) {
+		&_last {
+			.brands__column {
+				&:nth-child(1){
+					order: 2;
+				}
+				&:nth-child(2){
+					order: 1;
+				}
+				&:nth-child(3){
+					order: 3;
+				}
+			}
+		}
+		&__row {
+			flex-direction: column;
+		}
+	}
+}
+.item {
+	height: 100%;
+	display: block;
+	position: relative;
+	&__logo {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(100, 194, 158, 0.5);
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;	
+	}
+	&:hover {
+		.item__logo{
+			opacity: 0.5;
+			visibility: visible;
+		}
+	}
+	@media (max-width: 1100px) {
+		height: auto;
+		padding: 0 0 70% 0;
+	}
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+.slider {
+	position: relative;
+	background-color: #f7f7f7;
+	padding: 120px 0 60px 0;
+	&__body {}
+	&__item {
+		text-align: center;
+	}
+	&__icon {
+		margin: 0 0 35px 0;
+	}
+	&__title {
+		color: #353738;
+		font-size: 18px;
+		font-weight: 700;
+		margin: 0 0 20px 0;
+		span {
+			color: #848789;
+			font-weight: 300;
+		}
+	}
+	&__text {
+		text-align: center;
+		color: #848789;
+		font-size: 24px;
+		font-style: italic;
+		line-height: 34px;
+	}
+}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{
+	overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+	display: flex;
+}
+
+/* Стрелка */
+.slick-arrow{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+}
+/* Стрелка влево */
+.slick-arrow.slick-prev{
+	left: 0;
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next{
+	right: 0;
+}
+/* Точки (булиты) */
+.slick-dots{
+	display: flex;
+	justify-content: center;
+	margin: 30px 0 0 0;
+}
+.slick-dots li{
+	margin: 0 10px 0;
+}
+/* Активная точка */
+.slick-dots li.slick-active button{
+	background-color: #a9afb3;
+}
+/* Элемент точки */
+.slick-dots li button{
+	font-size: 0;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 2px solid #a9afb3;
+}
+////////////////////////////////////////////////////////////////////////////
+.shop {
+	background-color: #282f35;
+	.shop__row{
+		display: flex;
+		a {
+			margin: 75px auto;
+			color: #ffffff;
+			font-family: Lato;				
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 2.8px;
+			border: 1px solid #fff;
+			padding: 20px 57px;
+		}
+	}
+	@media (max-width: 350px) {
+		.shop__row {
+			a {
+				padding: 10px 30px;
+				margin:30px auto;
+			}
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////////////
+.subscribe {
+	&__body {
+		padding: 110px 0;
+		max-width: 534px;
+		margin: 0px auto;
+		text-align: center;
+	}
+	&__logo {}
+	&__label {
+		margin: 37px 0;
+		color: #848789;  
+		font-size: 24px;
+		line-height: 34px;
+		font-style: italic;
+	}
+	&__form {
+		display: flex;
+	}
+	&__input {
+		flex: 1 1 auto;
+		padding: 0 8px 0 0;
+	}
+	&__button {
+		flex: 0 0 126px;
+	}
+	&__btn {
+		width: 100%;
+		height: 69px;
+		background-color: #64c29e;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 24px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.input {
+		width: 100%;
+		height: 69px;
+		border: 1px solid #d3d7d9;
+		background-color: #ffffff;
+		padding: 0px 28px;
+		color: #929292;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	@media (max-width: 750px) {
+		&__body {
+			padding: 50px 0;
+		}
+	}
+	@media (max-width: 500px) {
+		&__form {
+			display: block;
+		}
+		&__btn {
+			margin-top: 20px;
+		}
+	}
+}
+
+
+
+//HEADER CODE {//////////////////////////////////////////////////////////////////////////
+.header {
+	position: absolute;
+	width: 100%;
+	z-index: 50;
+	left: 0;
+	top: 35px;
+}
+.header__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 85px;
+}
+
+.header__burger {
+	display: none;
+}
+.header__logo {
+	position: absolute;
+	left: 50% -1%;
+	top: 0;
+	z-index: 2;
+
+}
+.header__menu {
+
+}
+.header__list {
+	display: flex;
+}
+.header__list li {
+	padding: 0px 37.5px;
+	&:nth-child(2){
+		padding: 0px 110px 0px 37.5px;
+	}
+	&:nth-child(3){
+		padding: 0px 37.5px 0px 110px;
+	}
+}
+.header__link {
+	color: #4d4959;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2.6px;
+}
+@media (max-width: 767px) {
+	body.lock {
+		overflow: hidden;
+	}
+	.header {
+		top: 15px;
+	}
+	.header__body {
+		height: 50px;
+	}
+	.header__burger {
+		display: block;
+		position: relative;
+		top: 18px;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 5;
+		cursor: pointer;
+		left: 300px;
+		@media (max-width: 640px) {
+			left:250px;
+		}
+		@media (max-width: 535px) {
+			left: 200px;
+		}
+		@media (max-width: 450px) {
+			left: 140px;
+		}
+		span {
+			position: absolute;
+			background-color: #4d4959;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			top: 9px;
+			transition: all 0.3s ease 0s;
+		}
+		&:before,
+		&:after {
+			content: '';
+			background-color: #4d4959;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			left: 0;
+			transition: all 0.3s ease 0s;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after {
+			bottom: 0;
+		}
+	}
+	.header__burger.active span {
+		transform: scale(0);
+		background-color: #fff;
+	}
+	.header__burger.active:before {
+		transform:rotate(45deg);
+		top: 9px;
+		background-color: #fff;
+	}
+	.header__burger.active:after {
+		transform:rotate(-45deg);
+		bottom: 9px;
+		background-color: #fff;
+	}
+
+	.header__menu {
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		transition: all 0.3 ease 0s;
+		background-color: #4d4959;
+		padding: 150px 0px 20px 0px;
+	}
+	.header__menu.active {
+		top:0;
+	}
+	.header__list {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.header__list li {
+		padding: 0 !important;
+		padding-bottom: 45px !important;
+	}
+	.header__link {
+		color: white;
+		font-size: 20px;
+	}
+}
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//FOOTER CODE {///////////////////////////////////////////////////////////////////////
+.footer {
+	background-color: #f7f7f7;
+	padding: 100px 0;
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+	&__column {
+		flex: 0 1 33.333%;
+	}
+	&__address {
+		color: #848789;
+		line-height: 17.87px;
+		& p:first-child {
+			font-size: 16px;
+			font-weight: 700;
+		}
+	}
+	&__social {}
+	&__dev {}
+	@media (max-width: 1100px) {
+		padding: 50px 0;
+	}
+	@media (max-width: 600px) {
+		padding: 30px 0;
+		&__row {
+			flex-direction: column;
+			text-align: center;
+		}
+		&__social {
+			margin: 20px 0;
+		}
+	}
+}
+.social {
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	&__link {
+		margin: 0 7.5px;
+	}
+}
+.dev {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	&__text {
+		color: #848789;
+		line-height: 17.87px;
+		margin: 0 8px 0 0;
+	}
+	&__icon {
+		display: block;
+	}
+}
+//}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
